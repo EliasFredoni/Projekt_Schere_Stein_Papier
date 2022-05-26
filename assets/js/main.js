@@ -1,189 +1,117 @@
-console.log("SCHERE || STEIN || PAPIER");
+console.log("****************");
+console.log("SCHERE | STEIN | PAPIER");
+console.log("****************");
 
-//**********DOM****************/
+//**********DOM******************//
 
-const user = 0;
-const cpu = 0;
+let userScore_span = document.getElementById("userScore");
+let cpuScore_span = document.getElementById("cpuScore");
 
-const userScore_span = document.getElementById("userScore");
-const upuScore_span = document.getElementById("upuScore");
+let antwort_p = document.getElementById("antwort");
 
-//const ergebnis_div = document.getElementById("ergebnis");
-const antwort_p = document.getElementById("antwort");
-
-const schere_img = document.getElementById("schere"); //VAlUE
-const stein_img = document.getElementById("stein");
-const papier_img = document.getElementById("papier");
-const reset_h2 = document.getElementById("reset");     //
-
-//**********FUNCTION************/
-
-
-const computer = () => {
-    let auswahl = ["schere", "stein", "papier", "reset"];
-    let randomNumber = Math.floor(Math.random() * 3);
-    console.log(randomNumber)
-    return auswahl[randomNumber];
-};
-
-let spiel = () => {
-    console.log("Hi dude")
-}
-
-let schere = () => {
-    console.log("hey, du hast auf die Schere geklickt");
-    computer();
-}
-
-let stein = () => {
-    console.log("funktioniert")
-    computer();
-}
-
-let papier = () => {
-    console.log("funktioniert")
-    computer();
-}
-
-let neuerVersuch = () => {
-    console.log("Neu Start")
-    user;
-    cpu;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*let WinMSG = document.getElementById("WinMSG");
-let ChatMSG = document.getElementById("ChatMSG");
-let LoseMSG = document.getElementById("LoseMSG");
-
-onload = (event) => {
-    ChatMSG.style.color = "green";
-
-
-let wincount = 0;
-let losecount = 0;
+let win = 0;
+let lose = 0;
 let message = "";
-let winmsg = "";
-let losemsg = "";
+let winMassage = "";
+let loseMassage = "";
 
-function clickscissors() {
-    let random = Math.floor(Math.random() * 4);
+//**********FUNKTION**********//
+
+function schere() {
+    let random = Math.floor(Math.random() * 3);
     let Player = 0;
     let Bot = random;
     if (Bot === Player) {
-        ChatMSG.style.color = "orange";
-        message = "Gleichstand!   Dein Gegner hat auch Schere!";
-        ChatMSG.innerText = message;
+        antwort_p.style.color = "orange";
+        message = "Gleichstand";
+        antwort_p.innerText = message;
     } else if (Bot > 0 && Bot < 2) {
-        ChatMSG.style.color = "red";
-        message = "Verloren!   Dein Gegner hat Stein!";
-        losemsg = "Lose: " + ++losecount;
-        ChatMSG.innerText = message;
-        LoseMSG.innerText = losemsg;
+        antwort_p.style.color = "red";
+        message = "Verloren";
+        loseMassage = ++lose;
+        antwort_p.innerText = message;
+        cpuScore_span.innerText = loseMassage;
     } else if (Bot > 1 && Bot < 3) {
-        ChatMSG.style.color = "green";
-        message = "Gewonnen!   Dein Gegner hat Papier!";
-        winmsg = "Wins: " + ++wincount;
-        ChatMSG.innerText = message;
-        WinMSG.innerText = winmsg;
+        antwort_p.style.color = "green";
+        message = "Gewonnen!";
+        winMassage = ++win;
+        antwort_p.innerText = message;
+        userScore_span.innerText = winMassage;
     } else {
-        ChatMSG.style.color = "red";
-        message = "Verloren!   Dein Gegner hat Stein!";
-        losemsg = "Lose: " + ++losecount;
-        ChatMSG.innerText = message;
-        LoseMSG.innerText = losemsg;
+        antwort_p.style.color = "red";
+        message = "Verloren";
+        loseMassage = ++lose;
+        antwort_p.innerText = message;
+        cpuScore_span.innerText = loseMassage;
     }
-};
+}
 
-function clickstone() {
-    let random = Math.floor(Math.random() * 4);
+function stein() {
+    let random = Math.floor(Math.random() * 3);
     let Player = 1;
     let Bot = random;
     if (Bot === Player) {
-        ChatMSG.style.color = "orange";
-        message = "Gleichstand!   Dein Gegner hat auch Stein!";
-        ChatMSG.innerText = message;
+        antwort_p.style.color = "orange";
+        message = "Gleichstand";
+        antwort_p.innerText = message;
     } else if (Bot < 1) {
-        ChatMSG.style.color = "green";
-        message = "Gewonnen!   Dein Gegner hat Schere!";
-        winmsg = "Wins: " + ++wincount;
-        ChatMSG.innerText = message;
-        WinMSG.innerText = winmsg;
+        antwort_p.style.color = "green";
+        message = "Gewonnen!";
+        winMassage = ++win;
+        antwort_p.innerText = message;
+        userScore_span.innerText = winMassage;
     } else if (Bot > 1 && Bot < 3) {
-        ChatMSG.style.color = "red";
-        message = "Verloren!   Dein Gegner hat Papier!";
-        losemsg = "Lose: " + ++losecount;
-        ChatMSG.innerText = message;
-        LoseMSG.innerText = losemsg;
+        antwort_p.style.color = "red";
+        message = "Verloren";
+        loseMassage = ++lose;
+        antwort_p.innerText = message;
+        cpuScore_span.innerText = loseMassage;
     } else {
-        ChatMSG.style.color = "red";
-        message = "Verloren!   Dein Gegner hat Papier!";
-        losemsg = "Lose: " + ++losecount;
-        ChatMSG.innerText = message;
-        LoseMSG.innerText = losemsg;
+        antwort_p.style.color = "red";
+        message = "Verloren";
+        loseMassage = ++lose;
+        antwort_p.innerText = message;
+        cpuScore_span.innerText = loseMassage;
     }
-};
+}
 
-function clickpaper() {
-    let random = Math.floor(Math.random() * 4);
+function papier() {
+    let random = Math.floor(Math.random() * 3);
     let Player = 2;
     let Bot = random;
     if (Bot === Player) {
-        ChatMSG.style.color = "orange";
-        message = "Gleichstand!   Dein Gegner hat auch Papier!";
-        ChatMSG.innerText = message;
+        antwort_p.style.color = "orange";
+        message = "Gleichstand";
+        antwort_p.innerText = message;
     } else if (Bot < 2 && Bot > 0) {
-        ChatMSG.style.color = "green";
-        message = "Gewonnen!   Dein Gegner hat Stein!";
-        winmsg = "Wins: " + ++wincount;
-        ChatMSG.innerText = message;
-        WinMSG.innerText = winmsg;
+        antwort_p.style.color = "green";
+        message = "Gewonnen!";
+        winMassage = ++win;
+        antwort_p.innerText = message;
+        userScore_span.innerText = winMassage;
     } else if (Bot < 1) {
-        ChatMSG.style.color = "red";
-        message = "Verloren!   Dein Gegner hat Schere!";
-        losemsg = "Lose: " + ++losecount;
-        ChatMSG.innerText = message;
-        LoseMSG.innerText = losemsg;
+        antwort_p.style.color = "red";
+        message = "Verloren";
+        loseMassage = ++lose;
+        antwort_p.innerText = message;
+        cpuScore_span.innerText = loseMassage;
     } else {
-        ChatMSG.style.color = "red";
-        message = "Verloren!   Dein Gegner hat Schere!";
-        losemsg = "Lose: " + ++losecount;
-        ChatMSG.innerText = message;
-        LoseMSG.innerText = losemsg;
+        antwort_p.style.color = "red";
+        message = "Verloren";
+        loseMassage = ++lose;
+        antwort_p.innerText = message;
+        cpuScore_span.innerText = loseMassage;
     }
-};
-
-function clickreset() {
-    message = "Ein neuer Anfang!";
-    losecount = 0;
-    wincount = 0;
-    losemsg = "Lose: 0";
-    winmsg = "Wins: 0";
-    ChatMSG.innerText = message;
-    LoseMSG.innerText = losemsg;
-    WinMSG.innerText = winmsg;
-    ChatMSG.style.color = "lightgreen";
 }
-*/
+
+function neuerVersuch() {
+    message = "Ein neuer Anfang";
+    lose = 0;
+    win = 0;
+    loseMassage = "Lose: 0";
+    winMassage = "Wins: 0";
+    antwort_p.innerText = message;
+    cpuScore_span.innerText = loseMassage;
+    userScore_span.innerText = winMassage;
+    antwort_p.style.color = "lightgreen";
+}

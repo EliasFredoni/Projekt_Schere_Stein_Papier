@@ -14,13 +14,6 @@ body {
   text-align: center;
 }
 
-.ergebnis {
-  display: flex;
-  justify-content: center;
-  gap: 10%;
-  padding: 50px 200px;
-}
-
 div {
   display: flex;
   justify-content: center;
@@ -30,6 +23,8 @@ div {
   padding-top: 40px;
   font-size: 30px;
 }
+
+/*-------IMG-----*/
 
 img {
   border-style: solid;
@@ -43,6 +38,15 @@ div img:hover {
   border-color: yellow;
   border-width: 10px;
   cursor: pointer;
+}
+
+/*-----------------*/
+
+.ergebnis {
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+  padding: 50px 200px;
 }
 
 h2 {
