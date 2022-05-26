@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekt_Schere_Stein_Papier</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div>
+        <img src="assets/img/Schere_Stein_Papier.png">
+    </div>
+    <div class="ergebnis">
+        <p>DU <span id="userScore">0</span></p>
+        <p>COMPUTER <span id="cpuScore">0</span></p>
+    </div>
+    <div>
+        <p id="antwort">LOS GEHTS!</p>
+    </div>
+    <div>
+        <img id="schere" src="assets/img/Schere.png" onclick="schere()">
+        <img id="stein" src="assets/img/Stein.png" onclick="stein()">
+        <img id="papier" src="assets/img/Papier.png" onclick="papier()">
+    </div>
+    <div id="reset">
+        <h2 onclick="neuerVersuch()">NEUER VERSUCH</h2>
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
