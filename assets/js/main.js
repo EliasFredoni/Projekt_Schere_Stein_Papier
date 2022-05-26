@@ -1,6 +1,6 @@
-console.log("****************");
-console.log("SCHERE | STEIN | PAPIER");
-console.log("****************");
+console.log("%c****************", 'color:tomato');
+console.log("%cSCHERE | STEIN | PAPIER © Yles / SuperCode 2022", 'color:green');
+console.log("%c****************", 'color:tomato');
 
 //**********DOM******************//
 
@@ -108,8 +108,8 @@ function neuerVersuch() {
     message = "Ein neuer Anfang";
     lose = 0;
     win = 0;
-    loseMassage = "Lose: 0";
-    winMassage = "Wins: 0";
+    loseMassage = "0";
+    winMassage = "0";
     antwort_p.innerText = message;
     cpuScore_span.innerText = loseMassage;
     userScore_span.innerText = winMassage;
